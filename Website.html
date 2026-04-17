@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scream Button</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: black;
+    }
+
+    button {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: red;
+      color: white;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+<body>
+
+<button onclick="playScream()">CLICK</button>
+
+<audio id="screamSound" src="scream.mp3"></audio>
+
+<script>
+  function playScream() {
+    const audio = document.getElementById("screamSound")
+
+    audio.volume = 1 // max allowed in browser (user still controls device volume)
+    audio.currentTime = 0
+    audio.play()
+  }
+</script>
+
+</body>
+</html>
